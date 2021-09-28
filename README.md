@@ -96,9 +96,12 @@ plt.savefig("analysis/PyBer_Challenge.png")
 ![PyBer_Challenge](https://user-images.githubusercontent.com/89284280/135006944-eef74138-3545-4cb8-8070-a19e2652f4a6.png)
 
 ## Results
-We can see from the Summary DataFrame that the Total Rides and Total Drivers by City Type is significantly greater in Urban city types than suburban and rural city types. This overall volume of rides has a direct impact on the total fares collected within each city type. Further, the average cost of a fare in a rural city was over $10 more compared to the average fare in an urban city. Perhaps this is because the distances covered for a rural ride was significantly greater than an urban ride. Additional analysis would need to be done on distance travelled and ride duration to fully understand this behavior in the data.
+We can see from the Summary DataFrame that the Total Rides and Total Drivers by City Type is significantly greater in Urban city types than suburban and rural city types. This overall volume of rides has a direct impact on the Total Fares collected within each city type. Further, the average cost of a fare in a rural city was over $10 more compared to the average fare in an urban city. Perhaps this is because the distances covered for a rural ride was significantly greater than an urban ride. Additionally, analysis would need to be done on distance travelled and ride duration to fully understand this behavior in the data.
 
-The multi-line graph shows a similar behavior in the data as described above. The average fare by city type increased as the density of the city type decreased (from urban to rural). Besides looking at distance and time as a bearing on fare price, an analysis should also be done whether or not the rates for a driver varied by city type.
+The multi-line graph shows a similar behavior in the data as described above. The average fare by city type increased as the density of the city type decreased (from urban to rural). Besides looking at distance and time as a bearing on fare price, an analysis should also be done on whether or not the rates for a driver varied by city type.
 
 ## Summary
-1) 
+There are clear disparities in fares collected and the number of drivers in each of the city types.
+1) Based on the Total Drivers one can conclude that demand for PyBer varies by city type. The Total Fares collected in Urban cities is 2x Suburban and 8x rural.
+2) Average Fare per Ride in Urban cities is lower than other city types. This suggests that the rides are shorter in length.
+3) The Average Fare per Driver is significantly higher in Rural city types. This suggests that the rates charged are higher and/or time and distance traveled plays a significant part in the fare amount.
