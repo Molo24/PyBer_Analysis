@@ -60,4 +60,37 @@ summary_df
 
 
 ### Create Multiple-Line Graphy
+#### Create the DataFrame needed for graph
+```
+combined_df = pyber_data_df.groupby(['type','date']).sum()["fare"]
 
+combined_df = combined_df.reset_index()
+
+pivot_table = combined_df.pivot(index='date', columns='type', values='fare')
+
+date_df = pivot_table.loc['2019-01-01':'2019-04-29']
+
+date_df.index = pd.to_datetime(date_df.index)
+
+sum_fares_weekly = date_df.resample("W").sum()
+
+```
+#### Create the graph
+```
+from matplotlib import style
+
+# Use the graph style fivethirtyeight.
+style.use('fivethirtyeight')
+
+fig, ax = plt.subplots(figsize=(20, 8))
+ax.set_title("Total Fare by City Type")
+ax.set_ylabel('Fare($USD)',fontsize=14)
+ax.set_xlabel("Month",fontsize=14)
+
+ax.plot(sum_fares_weekly)
+
+plt.legend(['Urban', 'Suburban', 'Rural'], loc='center')
+
+plt.savefig("analysis/PyBer_Challenge.png")
+```
+![PyBer_Challenge](https://user-images.githubusercontent.com/89284280/135006944-eef74138-3545-4cb8-8070-a19e2652f4a6.png)
